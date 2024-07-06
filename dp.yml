@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rk
+  name: my-dp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: rk
+  template:
+    metadata:
+      labels:
+        app: rk
+    spec:
+      containers:
+        - name: my-cont3
+          image: kudipudirk/my-profile
+          ports:
+            - containerPort: 80
